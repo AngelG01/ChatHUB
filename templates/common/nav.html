@@ -1,0 +1,15 @@
+{% load static %}
+
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            {% if user.is_authenticated %}
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Room 1</a></li>
+                <li><a href="#">Logout</a></li>
+            {% else %}
+                <li><a href="#">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
