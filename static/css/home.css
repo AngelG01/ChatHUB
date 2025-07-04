@@ -5,24 +5,27 @@
     box-sizing: border-box;
 }
 
+/* ========== COLORS ========== */
+:root {
+    --blue: #007bff;
+    --orange: #fd7e14;
+    --white: #ffffff;
+    --light-gray: #f8f9fa; /* Kept for hover effects */
+    --dark-text: #343a40;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    color: #222;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--dark-text);
     line-height: 1.6;
+    /* Add these three lines */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* ========== COLORS ========== */
-:root {
-    --blue: #1e88e5;
-    --orange: #ff7043;
-    --white: #ffffff;
-    --light-gray: #f1f1f1;
-    --dark: #222;
-}
+
 
 /* ========== NAVIGATION ========== */
 nav {
@@ -56,91 +59,117 @@ nav {
 }
 
 /* ========== MAIN CONTENT ========== */
-main {
-    flex: 1;
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; 
     padding: 2em;
+}
+
+/* New Hero Section Layout */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4em; /* Space between the two sections */
     max-width: 1000px;
-    margin: 0 auto;
-    background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-/* ========== FOOTER ========== */
-footer {
-    background-color: var(--blue);
-    color: var(--white);
-    text-align: center;
-    padding: 1.5em 1em;
-    font-size: 0.9em;
+.welcome-section {
+    flex-basis: 50%; /* Takes up half the space */
+    text-align: left;
 }
 
-footer a {
-    color: var(--orange);
-    text-decoration: none;
-    margin: 0 0.5em;
+.hero-logo {
+    max-width: 300px; /* Make logo a bit larger */
+    height: auto;
+    margin-bottom: 1em;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.welcome-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
 }
 
-/* ========== FORMS (Login/Register) ========== */
-form {
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.room-selection-section {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Room Box Styling (Slightly adjusted) */
+.room-container {
+    width: 100%;
     max-width: 400px;
-    margin: 2em auto;
+    background-color: var(--light-gray); /* Light background to stand out */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     padding: 2em;
-    background-color: var(--white);
-    border: 2px solid var(--blue);
-    border-radius: 10px;
-}
-
-form h2 {
-    margin-bottom: 1em;
     text-align: center;
-    color: var(--blue);
 }
 
-form input[type="text"],
-form input[type="password"],
-form input[type="email"] {
-    width: 100%;
-    padding: 0.75em;
+.room-container h2 {
+    margin-top: 0;
+    color: var(--dark-text);
+    font-size: 1.8rem;
     margin-bottom: 1em;
-    border: 1px solid var(--orange);
-    border-radius: 6px;
-    font-size: 1em;
 }
 
-form button {
-    width: 100%;
-    padding: 0.75em;
+.room-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.room-list li {
+    margin-bottom: 1em;
+}
+
+.room-list a {
+    display: block;
+    background-color: var(--white);
+    color: #495057;
+    text-decoration: none;
+    padding: 1em;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #dee2e6;
+}
+
+.room-list a:hover {
     background-color: var(--blue);
-    border: none;
-    border-radius: 6px;
     color: var(--white);
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    border-color: var(--blue);
 }
 
-form button:hover {
-    background-color: var(--orange);
-}
-
-/* ========== RESPONSIVE DESIGN ========== */
+/* Responsive adjustment for smaller screens */
 @media (max-width: 768px) {
-    .nav-container {
-        justify-content: center;
-    }
-
-    .nav-links {
+    .hero-container {
         flex-direction: column;
-        align-items: center;
-        gap: 1em;
+        text-align: center;
     }
+    .welcome-section {
+        text-align: center;
+    }
+}
 
-    main {
-        padding: 1.5em;
-    }
+footer {
+    width: 100%;
+    padding: 1.5em 2em;
+    text-align: center;
+    background-color: #f8f9fa; /* A light gray to separate it */
+    border-top: 1px solid #dee2e6; /* A subtle top border */
+    color: #6c757d;
 }

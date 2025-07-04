@@ -1,8 +1,27 @@
 {% extends 'common/base.html' %}
+{% load static %}
 
-{% block title %}Home - ChatVerse{% endblock %}
+{% block title %}Welcome to ChatHUB{% endblock %}
 
 {% block content %}
-<h2>Welcome to ChatHUB</h2>
-<p>Start chatting by entering a room or sending a private message.</p>
+<div class="hero-container">
+    <div class="welcome-section">
+        <img src="{% static 'images/logo.png' %}" alt="ChatHUB Logo" class="hero-logo">
+        <h1>Welcome to ChatHUB</h1>
+        <p>Your new favorite place to connect, discuss, and share. Select a room to get started.</p>
+    </div>
+
+    <div class="room-selection-section">
+        <div class="room-container">
+            <h2>Join a Room</h2>
+            <ul class="room-list">
+                <li><a href="#">#Gaming 🎮</a></li>
+                <li><a href="#">#Crypto ₿</a></li>
+                <li><a href="#">#Coding &lt;/&gt;</a></li>
+                <li><a href="#">#Fun 😂</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}
+
