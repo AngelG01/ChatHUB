@@ -4,11 +4,11 @@
     <div class="nav-container">
         <ul class="nav-links">
             {% if user.is_authenticated %}
-                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'home-page' %}">Home</a></li>
                 <li><a href="#">Room 1</a></li>
                 <li><a href="#">Logout</a></li>
             {% else %}
-                <li><a href="#">Login</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
             {% endif %}
         </ul>
     </div>

@@ -1,0 +1,43 @@
+{% extends 'common/base.html' %}
+
+{% block title %}Login - ChatHUB{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="auth-title">Welcome Back!</h2>
+        <p class="auth-subtitle">Login to continue to ChatHUB</p>
+
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+
+            {# Display non-field errors, like "Invalid login credentials" #}
+            {% if form.non_field_errors %}
+                <div class="form-errors">
+                    {% for error in form.non_field_errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {# Manually render username field #}
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Username</label>
+                {{ form.username }}
+            </div>
+
+            {# Manually render password field #}
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}">Password</label>
+                {{ form.password1 }}
+            </div>
+
+            <button type="submit" class="btn-primary">Login</button>
+
+            <p class="auth-switch-link">
+                Don't have an account? <a href="#">Sign up here</a>
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}
