@@ -19,13 +19,10 @@ body {
     background-color: var(--white);
     color: var(--dark-text);
     line-height: 1.6;
-    /* Add these three lines */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
-
 
 /* ========== NAVIGATION ========== */
 nav {
@@ -35,16 +32,23 @@ nav {
 
 .nav-container {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns items to the top */
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Add this new rule for your logo */
+.logo img {
+    height: 60px; /* Adjust height as needed */
+    width: auto;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 2em;
+    padding-top: 1em;
 }
 
 .nav-links li a {
@@ -63,7 +67,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1; 
+    flex-grow: 1;
     padding: 2em;
 }
 
@@ -154,7 +158,18 @@ nav {
     border-color: var(--blue);
 }
 
-/* Responsive adjustment for smaller screens */
+/* ========== FOOTER ========== */
+footer {
+    width: 100%;
+    padding: 1.5em 2em;
+    text-align: center;
+    background-color: #f8f9fa; /* A light gray to separate it */
+    border-top: 1px solid #dee2e6; /* A subtle top border */
+    color: #6c757d;
+}
+
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .hero-container {
         flex-direction: column;
@@ -163,13 +178,4 @@ nav {
     .welcome-section {
         text-align: center;
     }
-}
-
-footer {
-    width: 100%;
-    padding: 1.5em 2em;
-    text-align: center;
-    background-color: #f8f9fa; /* A light gray to separate it */
-    border-top: 1px solid #dee2e6; /* A subtle top border */
-    color: #6c757d;
 }
